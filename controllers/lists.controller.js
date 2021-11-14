@@ -26,14 +26,14 @@ class ListsController {
             res.send({message: `Tarefa ${list.titulo} adicionada com sucesso.`})
         })
         .catch((err) => {
-            console.erro(err);
+            console.error(err);
             res.status(500).send({message: `Erro no servidor!!`})
         })
     }
 
     editList =  async (req, res) => {
         const listEdit = req.body;
-        await listsServices.edit(req.params.id)
+        await listsService.edit(req.params.id, listEdit)
         .then(() => {
             res.send({message: `Tarefa ${list.titulo} editada com sucesso.`})
         })
@@ -43,9 +43,9 @@ class ListsController {
     }
 
     deleteList = async (req, res) => {
-        await listsServices.delete(req.params.id)
+        await listsService.delete(req.params.id)
         .then(() => {
-            res.send({message: `${list.titulo} excluido com sucesso!`})
+            res.send({message: `${list.titulo} Excluido com sucesso!`})
         })
         .catch( err => {
             res.status(500).send({message: 'Ops! Alguma coisa aconteceu de errado.'})

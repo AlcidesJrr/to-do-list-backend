@@ -1,4 +1,4 @@
-const ListsModel = require('../models/list');
+const ListsModel = require('./../models/list');
 
 class listsService {
     findAll = async () => await ListsModel.find();
@@ -12,11 +12,11 @@ class listsService {
     };
 
     edit = async (id, list) => {
-        return await ListsModel.findById({id}, list)
+        return await ListsModel.findByIdAndUpdate(id, list)
     };
 
     delete =  async (id) => {
-        return await ListsModel.findByIdAndDelete({id})
+        return await ListsModel.findByIdAndDelete(id)
     };
 }
 
