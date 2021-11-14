@@ -23,7 +23,7 @@ class ListsController {
         }
         await listsService.create(req.body)
         .then(() => {
-            res.send({message: `Tarefa ${list.titulo} adicionada com sucesso.`})
+            res.send({message: `Tarefa adicionada com sucesso.`})
         })
         .catch((err) => {
             console.error(err);
@@ -35,7 +35,7 @@ class ListsController {
         const listEdit = req.body;
         await listsService.edit(req.params.id, listEdit)
         .then(() => {
-            res.send({message: `Tarefa ${list.titulo} editada com sucesso.`})
+            res.send({message: `Tarefa editada com sucesso.`})
         })
         .catch(err => {
             res.status(500).send({message: 'Ops! Alguma coisa aconteceu de errado.'})
@@ -45,7 +45,7 @@ class ListsController {
     deleteList = async (req, res) => {
         await listsService.delete(req.params.id)
         .then(() => {
-            res.send({message: `${list.titulo} Excluido com sucesso!`})
+            res.send({message: ` Excluido com sucesso!`})
         })
         .catch( err => {
             res.status(500).send({message: 'Ops! Alguma coisa aconteceu de errado.'})
