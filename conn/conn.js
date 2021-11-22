@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Conn = () => {
-    mongoose.connect('mongodb://localhost:27017/lists', {
+    mongoose.connect('mongodb+srv://dbUser:WAakQrG1BBA21lCi@todolist.ypeuw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     }).then(() => {

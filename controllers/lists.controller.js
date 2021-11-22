@@ -45,7 +45,7 @@ class ListsController {
     deleteList = async (req, res) => {
         await listsService.delete(req.params.id)
         .then(() => {
-            res.send({message: ` Excluido com sucesso!`})
+            res.send({message: `Excluido com sucesso!`})
         })
         .catch( err => {
             res.status(500).send({message: 'Ops! Alguma coisa aconteceu de errado.'})
