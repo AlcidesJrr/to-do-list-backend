@@ -5,8 +5,9 @@ const listSchema = new mongoose.Schema({
     descricao: {type: String, required:true},
     prioridade: {type: String, required: true},
     status: {type: String, required: true},
-    prazo: {type: Date, required: true},
+    prazo: {type: Date, default: Date.now},
     dataCriacao: {type: Date, default: Date.now}
+    
 })
 
 const ListModel = mongoose.model('lists', listSchema)
